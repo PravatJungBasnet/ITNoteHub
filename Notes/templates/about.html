@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Header Start -->
+<div class="container-fluid page-header" style="margin-bottom: 90px;">
+    <div class="container">
+        <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+            <h3 class="display-4 text-white text-uppercase">About</h3>
+            <div class="d-inline-flex text-white">
+                <p class="m-0 text-uppercase"><a class="text-white" href="{% url 'index' %}">Home</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">About</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- EndHeader Start -->
+
+<div class="container-fluid py-2">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'img/logo.png' %}" alt="" height="600px" width="600px">
+            </div>
+            <div class="col-lg-7">
+                <div class="text-left mb-4">
+                    <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">About Us</h5>
+                    <h1>Innovative Way To Learn</h1>
+                </div>
+                <p>Welcome to NotesHub, your premier destination for academic excellence! At NotesHub, we understand the pivotal role that comprehensive and reliable notes play in shaping academic success. Whether you're a high school student navigating challenging coursework or a university scholar delving into complex subjects, our platform is designed to be your ultimate semester companion.
+                </p>
+                <p> Founded by a team of passionate educators and tech enthusiasts, NotesHub is committed to democratizing access to quality educational resources. We believe that every student deserves the opportunity to excel, regardless of their background or circumstances. That's why we've curated a vast repository of meticulously crafted notes, covering a wide range of subjects and academic levels.  Furthermore, we understand that learning doesn't just happen in the classroom. That's why our platform is designed to foster a collaborative learning community where students can engage with each other, share insights, and support one another's academic journey. Whether you're seeking clarification on a difficult concept or looking for study tips, NotesHub is your virtual academic family.
+                </p>  <p> As we continue to evolve and grow, our mission remains unchanged: to empower students like you to reach new heights of academic success. Join us on this exciting journey, and let's unlock the doors to knowledge together. Welcome to NotesHub – where learning knows no bounds.</p>
+                <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

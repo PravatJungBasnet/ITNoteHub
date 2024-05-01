@@ -1,0 +1,148 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .semester-card {
+      margin-bottom: 20px;
+    }
+    .card-body {
+      padding: 20px;
+    }
+    .card-title {
+      font-weight: bold;
+    }
+    .card-semester-1 {
+      background-color: #ffcccc; /* Light Red */
+    }
+    .card-semester-2 {
+      background-color: #ffddcc; /* Light Orange */
+    }
+    .card-semester-3 {
+      background-color: #ffeecc; /* Light Yellow */
+    }
+    .card-semester-4 {
+      background-color: #e5ffcc; /* Light Green */
+    }
+    .card-semester-5 {
+      background-color: #ccffcc; /* Light Blue */
+    }
+    .card-semester-6 {
+      background-color: #ccf2ff; /* Light Cyan */
+    }
+    .card-semester-7 {
+      background-color: #ccccff; /* Light Purple */
+    }
+    .card-semester-8 {
+      background-color: #ffccff; /* Light Pink */
+    }
+  </style>
+
+<!-- Header Start -->
+<div class="container-fluid page-header" style="margin-bottom: 90px;">
+    <div class="container">
+        <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+            <h3 class="display-4 text-white text-uppercase">Contact</h3>
+            <div class="d-inline-flex text-white">
+                <p class="m-0 text-uppercase"><a class="text-white" href="{% url 'index' %}">Home</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">BIT</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+<h1 class="text-center">Semester Wise Notes</h1> br
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card semester-card card-semester-1">
+          <div class="card-header">
+            <h5 class="card-title text-center "><a href="#">First Semester</a></h5>
+          </div>
+          <div class="card-body text-center">
+            <!-- Content for Semester 1 -->
+            <h6>Five Subjects</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card semester-card card-semester-2">
+          <div class="card-header">
+            <h5 class="card-title text-center"><a href="#">Second Semester</a</h5>
+          </div>
+          <div class="card-body text-center">
+            <h6>Five Subjects</h6>
+            <!-- Content for Semester 2 -->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card semester-card card-semester-3">
+          <div class="card-header">
+            <h5 class="card-title text-center"><a href="#">Third Semester</a></h5>
+          </div>
+          <div class="card-body text-center">
+            <h6>Five Subjects</h6>
+            <!-- Content for Semester 3 -->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card semester-card card-semester-4">
+          <div class="card-header">
+            <h5 class="card-title text-center"><a href="#">Fourth Semester</a></h5>
+          </div>
+          <div class="card-body text-center">
+            <h6>Five Subjects</h6>
+            <!-- Content for Semester 4 -->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card semester-card card-semester-5">
+          <div class="card-header">
+            <h5 class="card-title text-center"><a href="#">Fifth Semester</a></h5>
+          </div>
+          <div class="card-body text-center">
+            <h6>Six Subjects</h6>
+            <!-- Content for Semester 5 -->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card semester-card card-semester-6">
+          <div class="card-header">
+            <h5 class="card-title text-center"><a href="#">Sixth Semester</a></h5>
+          </div>
+          <div class="card-body text-center">
+            <h6>Six Subjects</h6>
+            <!-- Content for Semester 6 -->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card semester-card card-semester-7">
+          <div class="card-header">
+            <h5 class="card-title text-center"><a href="#">Seventh Semester</a></h5>
+          </div>
+          <div class="card-body text-center">
+            <h6>Four Subjects</h6>
+            <!-- Content for Semester 7 -->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card semester-card card-semester-8">
+          <div class="card-header">
+            <h5 class="card-title text-center"><a href="#">Eight Semester</a></h5>
+          </div>
+          <div class="card-body text-center">
+            <h6>Four Subjects</h6>
+            <!-- Content for Semester 8 -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
