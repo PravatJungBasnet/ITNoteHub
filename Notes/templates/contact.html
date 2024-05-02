@@ -19,6 +19,37 @@
 
 
 <!-- Contact Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Contact</h5>
+            <h1>Contact For Any Query</h1>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="contact-form bg-secondary rounded p-5">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {% for contacts in contact %}
+                        {{contacts.label_tag}}
+                        {{contacts}}
+                        {{contacts.errors}}
+                        <br>
+                        
+                        
+
+                        {% endfor %}
+                        <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
+                        
+                       
+                       
+                        
+
+                    </form>
+                    </div>
+            </div>
+        </div>
+
 
 <!-- Contact End -->
 

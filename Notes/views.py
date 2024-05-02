@@ -1,10 +1,13 @@
 from typing import Any
+from django.http import HttpResponseRedirect
 from django.shortcuts import render,get_object_or_404
 from django.views.generic import DetailView, TemplateView
 from .models import *
 from django.http import FileResponse
 from django.core.mail import send_mail
 from django.http import HttpResponse
+from .forms import ContactForm
+from django.urls import reverse
 
 # Create your views here.
 def Index(request):
@@ -21,35 +24,40 @@ def About(request):
 
 def Contact(request):
     if request.method == 'POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        subject = request.POST.get('subject')
-        message = request.POST.get('message')
+        contact=ContactForm(request.POST)
+        if contact.is_valid():
+            name = contact.cleaned_data['name']
+            email = contact.cleaned_data['email']
+            subject=contact.cleaned_data['subject']
+            message = contact.cleaned_data['message']
+       
         
         try:
             # Send email
             send_mail(
                 subject,
-                f"Name: {name}\nEmail: {email}\nMessage: {message}",
+                f"Name: {name}\nEmail: {email}\nMessage: {message}\nSubject: {subject}",
                 email,  # Sender's email address
                 ['pravatjungbasnet@gmail.com'],  # Recipient's email address
                 fail_silently=False,
             )
+            contact.save()
             
             # Create an instance of Contact_Us model
-            contact = Contact_Us(name=name, email=email, subject=subject, message=message)
-            if contact.is_valid():
-            
+           
+           
+            #Message received! Thank you for contacting us.
             # Save the instance to the database
-                print('valid')
-                contact.save()
             
-            return HttpResponse('Message received! Thank you for contacting us.')
+
+            
+            return HttpResponseRedirect(reverse('contact') + '?message=Message%20received!%20Thank%20you%20for%20contacting%20us.')
         except:
             # Inform the user that there's an issue with sending the email
             return HttpResponse('Sorry, there was a problem sending the email. Please try again later.')
     else:
-        return render(request, 'contact.html')
+        contact=ContactForm()
+    return render(request, 'contact.html',{'contact':contact})
 
 
 def CSIT(request):
