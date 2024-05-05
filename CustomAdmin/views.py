@@ -29,6 +29,11 @@ def AdminLogin(request):
             print("Invalid username or password")
 
     return render(request, 'Login.html')
+#admin logout
+def Admin_Logout(request):
+    
+    logout(request)
+    return HttpResponseRedirect(reverse('customadmin:admin-login'))
 
 #Semester
 def Semester_Detail(request):
@@ -40,6 +45,16 @@ def Semester_Detail(request):
 def Subject_Detail(request):
     sub=Subject.objects.all()
     return render(request,'Subject.html',{'sub':sub})
+
+
+def Chapter_Detail(request):
+    Chap=Chapter.objects.all()
+    return render(request,'Chapterdet.html',{'Chap':Chap})
+
+
+def Notes_Detail(request):
+    notes=Notes.objects.all()
+    return render(request,'Notesdet.html',{'notes':notes})
     
 
 

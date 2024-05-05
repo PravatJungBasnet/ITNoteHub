@@ -1,0 +1,100 @@
+{% extends 'Dash.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.bootstrap5.css">
+ <link rel="stylesheet" href="{% static 'css/table.css' %}">
+ <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+<script src="https://cdn.datatables.net/2.0.2/js/dataTables.bootstrap5.js"></script>
+<div class="dashboard-wrapper">
+    <div class="container-fluid dashboard-content">
+        <!-- ============================================================== -->
+        <!-- pageheader -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="page-header">
+                    <h2 class="pageheader-title">Notes Table </h2>
+                    
+                    <div class="page-breadcrumb">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Tables</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Users Tables</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end pageheader -->
+        <!-- ============================================================== -->
+    
+        <div class="row">
+            <!-- ============================================================== -->
+            <!-- basic table -->
+            <!-- ============================================================== -->
+    
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                  <table id="example" class="table table-striped" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Faculty</th>
+                            <th>Semester</th>
+                            <th>Subject</th>
+                            <th>Chapter</th>
+                            <th>Note</th>
+                            <th>Action</th>
+                            
+                            
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for note  in notes %}
+                    
+                      
+                        <tr>
+                            <td>{{note.title}}</td>
+                            <td>{{note.faculty}}</td>
+                            <td>{{note.semester}}</td>
+                            <td>{{note.subject}}</td>
+                            <td>{{note.chapter}}</td>
+                            <td>{{note.note}}</td>
+                            
+                            <td> <a href="#" class="btn btn-primary rounded-btn text-white px-4 py-2 ">Details</a></td>
+                            
+                            
+                            
+                            
+                            
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                        
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<script>
+  new DataTable('#example');
+</script>
+ <!-- Page level plugins -->
+ 
+ <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+ <script src="{% static 'vendor/datatables/jquery.dataTables.min.js'% }"></script>
+
+ <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+ <script src="{% static 'vendor/datatables/dataTables.bootstrap4.min.js' %}"></script>
+{% endblock content %}
