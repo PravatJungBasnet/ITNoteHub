@@ -26,6 +26,7 @@
                                 <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
                                 <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Tables</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Users Tables</li>
+                                <li class=" ml-auto"><a href="{% url 'customadmin:addchapter' %}" class="breadcrumb-link btn btn-primary rounded-btn text-white px-4 py-2" >Add Chapter</a></li>
                             </ol>
                         </nav>
                     </div>
@@ -46,10 +47,12 @@
                   <table id="example" class="table table-striped" style="width:100%">
                     <thead>
                         <tr>
+                            <th>Faculty</th>
+                            <th>Semester</th>
+                            <th>Subject</th>
                             <th>Unit</th>
                             <th>Title</th>
                             
-                            <th>Subject</th>
                             <th>Action</th>
 
                             
@@ -62,12 +65,21 @@
                     
                       
                         <tr>
-                            <td>{{chapter.unit}}</td>
-                            <td>{{chapter.title}}</td>
+                            <td>{{chapter.faculty}}</td>
+                            <td>{{chapter.semester}}</td>
                             <td>{{chapter.subject}}</td>
 
+                            <td>{{chapter.unit}}</td>
+                            <td>{{chapter.title}}</td>
                             
-                            <td> <a href="#" class="btn btn-primary rounded-btn text-white px-4 py-2 ">Details</a></td>
+
+                            
+                            <td> <a href="#" class="btn btn-primary rounded-btn text-white px-4 py-2 ">Edit</a>
+                                <form action="" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-danger rounded-btn text-white px-4 py-2 ">Delete</a></td>
+                                    </button>
+       
+                                   </form></td>
                             
                             
                             

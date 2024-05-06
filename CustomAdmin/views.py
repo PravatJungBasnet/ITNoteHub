@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.urls import reverse
 from Notes.models import *
+from Notes.forms import *
 
 # Create your views here.
 def Index(request):
@@ -40,21 +41,61 @@ def Semester_Detail(request):
     sem=Semester.objects.all()
     return render(request,'Sem.html',{'sem':sem})
 
+def Add_Semester(request):
+    if request.method=='POST':
+        fm=SemesterForm(request.POST)
+        if fm.is_valid():
+            fm.save()
+            return HttpResponseRedirect(reverse('customadmin:semester-detail'))
+    else:
+        fm=SemesterForm()
+    return render(request,'Addsemester.html',{'fm':fm})
+
 
 #Subject
 def Subject_Detail(request):
     sub=Subject.objects.all()
     return render(request,'Subject.html',{'sub':sub})
 
+def Add_Subject(request):
+    if request.method=='POST':
+        fm=SubjectForm(request.POST)
+        if fm.is_valid():
+            fm.save()
+            return HttpResponseRedirect(reverse('customadmin:subject-detail'))
+    else:
+        fm=SubjectForm()
+    return render(request,'Addsubject.html',{'fm':fm})
+
 
 def Chapter_Detail(request):
     Chap=Chapter.objects.all()
     return render(request,'Chapterdet.html',{'Chap':Chap})
 
+def Add_Chapter(request):
+    if request.method=='POST':
+        fm=ChapterForm(request.POST)
+        if fm.is_valid():
+            fm.save()
+            return HttpResponseRedirect(reverse('customadmin:chapter-detail'))
+    else:
+        fm=ChapterForm()
+    return render(request,'Addchapter.html',{'fm':fm})
+
 
 def Notes_Detail(request):
     notes=Notes.objects.all()
     return render(request,'Notesdet.html',{'notes':notes})
+
+def Add_Notes(request):
+    if request.method=='POST':
+        fm=NotesForm(request.POST)
+        if fm.is_valid():
+            fm.save()
+            return HttpResponseRedirect(reverse('customadmin:notes-detail'))
+    else:
+        fm=NotesForm()
+    return render(request,'Addnote.html',{'fm':fm})
     
 
 

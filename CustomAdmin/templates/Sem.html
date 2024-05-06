@@ -26,6 +26,7 @@
                                 <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
                                 <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Tables</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Users Tables</li>
+                                <li class=" ml-auto"><a href="{% url 'customadmin:addsemester' %}" class="breadcrumb-link btn btn-primary rounded-btn text-white px-4 py-2" >Add Semester</a></li>
                             </ol>
                         </nav>
                     </div>
@@ -63,7 +64,12 @@
                             <td>{{semester.name}}</td>
                             <td>{{semester.faculty}}</td>
                             
-                            <td> <a href="#" class="btn btn-primary rounded-btn text-white px-4 py-2 ">Details</a></td>
+                            <td> <a href="#" class="btn btn-primary rounded-btn text-white px-4 py-2 ">Edit</a>
+                                <form action="" method="post" class="d-inline">
+                             <button type="submit" class="btn btn-danger rounded-btn text-white px-4 py-2 ">Delete</a></td>
+                             </button>
+
+                            </form>
                             
                             
                             

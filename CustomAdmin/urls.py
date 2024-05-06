@@ -6,9 +6,13 @@ urlpatterns=[
     path('admin-logout/',views.Admin_Logout,name='admin-logout'),
     path('dashboard/', views.Index,name='dashboard'),
     path('sem/',views.Semester_Detail,name='sem'),
+    path('addsemester/',views.Add_Semester,name='addsemester')   ,
     path('subject/',views.Subject_Detail,name='subject'),
+    path('addsubject/',views.Add_Subject,name='addsubject'),
     path('chapterdetails/',views.Chapter_Detail,name='chapterdetails'),
-    path('notesdetails/', views.Notes_Detail,name='notesdetails')
+    path('addchapter/',views.Add_Chapter,name='addchapter'),
+    path('notesdetails/', views.Notes_Detail,name='notesdetails'),
+    path('addnote/', views.Add_Notes,name='addnote'),
     
     
 ]

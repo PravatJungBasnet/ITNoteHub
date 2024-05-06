@@ -41,9 +41,13 @@ class Chapter(models.Model):
         ('Unit 7','Unit 7'),
         ('Unit 8','Unit 8'),
     ]
+    faculty=models.ForeignKey(Faculty,on_delete=models.CASCADE)
+    subject=models.ForeignKey(Subject,on_delete=models.CASCADE)
+    semester=models.ForeignKey(Semester,on_delete=models.CASCADE)
     unit=models.CharField(max_length=100,choices=Unit_choice)
     title=models.CharField(max_length=100)
-    subject=models.ForeignKey(Subject,on_delete=models.CASCADE)
+    
+    
     def __str__(self):
         return self.title
 

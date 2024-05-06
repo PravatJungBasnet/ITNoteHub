@@ -1,0 +1,40 @@
+{% extends 'dash.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid dashboard-content">
+    <!-- ============================================================== -->
+    <!-- pageheader -->
+    <!-- ============================================================== -->
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="page-header">
+                <h2 class="pageheader-title">Add Semester </h2>
+                
+                <div class="page-breadcrumb">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                            
+                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link"> Users Tables </a></li>
+                         
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end pageheader -->
+    <!-- ============================================================== -->
+    <form action="" method="post" enctype="multipart/form-data" class="">
+        {% csrf_token %}
+        <h3>Semester Form</h3>
+        {% for form in fm %}
+        {{form.label_tag}}
+        {{form}}
+        {{form.errors}}
+        <br>
+        {% endfor %}
+         <input type="submit" value="Save" class="btn btn-primary rounded-btn text-white px-4 py-2 ">
+         </form>
+    
+{% endblock content %}
